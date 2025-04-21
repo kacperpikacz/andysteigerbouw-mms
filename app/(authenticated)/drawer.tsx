@@ -29,6 +29,9 @@ export function Drawer({children, session}: { children: ReactNode, session: Sess
         setDocumentTitle(document.title);
     }, [pathname]);
 
+    const handleNavigate = () => {
+        if (checkboxRef.current) checkboxRef.current.checked = false;
+    };
 
     return <div className={`drawer ${drawerOpen ? "lg:drawer-open" : ""}`}>
         <input id="layout-sidebar-toggle-trigger" type="checkbox" className="drawer-toggle" ref={checkboxRef}/>
@@ -93,7 +96,7 @@ export function Drawer({children, session}: { children: ReactNode, session: Sess
             <label className="drawer-overlay" onClick={() => {
                 if (checkboxRef.current) checkboxRef.current.checked = false;
             }}/>
-            <aside className="min-h-screen bg-base-200 w-[256px]">
+            <aside className="h-full bg-base-200 w-[256px]">
                 <div className="navbar border-b h-16 justify-center border-base-300 hidden lg:flex p-2">
                     <Link href="/" className="h-full hover:opacity-75 transition-opacity"> <Image src={logoWhite}
                                                                                                   alt="logo"
@@ -127,7 +130,7 @@ export function Drawer({children, session}: { children: ReactNode, session: Sess
                         <Icon icon="lucide:chevrons-up-down" className="size-4 text-base-content/60"/></div>
                     <ul role="menu" tabIndex={0}
                         className="dropdown-content menu bg-base-100 shadow-base-content/4 mb-1 w-48 p-1 shadow-[0px_-10px_40px_0px]">
-                        <li><Link href="/profile" data-discover="true">
+                        <li><Link href="/profile" onClick={handleNavigate} data-discover="true">
                             <Icon icon="lucide:user" className="size-4"/>
                             <span>My profile</span></Link></li>
                         <li>
