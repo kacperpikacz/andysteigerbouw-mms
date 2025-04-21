@@ -5,6 +5,7 @@ import {Icon} from "@iconify/react";
 
 export function ThemeSwitcher() {
     const {setTheme} = useTheme();
+    
     return <div className="dropdown dropdown-end">
         <div tabIndex={0} role="button" className="btn btn-square btn-outline border-base-300"
              aria-label="Theme toggle">

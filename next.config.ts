@@ -1,6 +1,7 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
+    crossOrigin: "anonymous",
     experimental: {
         serverActions: {
             bodySizeLimit: '10mb',
