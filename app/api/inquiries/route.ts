@@ -21,7 +21,9 @@ const ALLOWED_MIME_TYPES = [
 
 export async function POST(request: NextRequest) {
     const form = await request.formData();
-    const attachments = form.getAll("attachments") as File[];
+
+    let attachments = form.getAll("attachments") as File[];
+    if (attachments.length > 0 && attachments.at(0)!.name === "") attachments = [];
 
     const token = form.get("cf-turnstile-response");
     const ip = request.headers.get("x-forwarded-for")?.split(",")[0]?.trim();
@@ -43,16 +45,19 @@ export async function POST(request: NextRequest) {
 
     if (!outcome.success) return NextResponse.json({success: false, message: "Failed verification"});
 
-    for (const file of attachments) {
-        if (!ALLOWED_MIME_TYPES.includes(file.type)) {
-            return NextResponse.json({success: false, error: `Invalid file type: ${file.name}`}, {status: 400});
+
+        for (const file of attachments) {
+            if (!ALLOWED_MIME_TYPES.includes(file.type)) {
+                return NextResponse.json({success: false, message: `Invalid file type: ${file.name}`}, {status: 400});
+            }
         }
-    }
+
+
 
     const totalSize = attachments.reduce((acc, file) => acc + file.size, 0);
     if (totalSize > MAX_TOTAL_SIZE) return NextResponse.json({
         success: false,
-        error: "File size exceeds 10MB"
+        message: "File size exceeds 10MB"
     }, {status: 400});
 
     const fields = Object.fromEntries(form.entries());
@@ -61,9 +66,10 @@ export async function POST(request: NextRequest) {
     delete fields["attachments"];
 
     const validated = InquiryCreateInputSchema.safeParse(fields);
+    const errors = validated.error?.format();
     if (!validated.success) {
         return NextResponse.json(
-            { success: false, error: validated.error.flatten() },
+            { success: false, message: validated.error.format() },
             { status: 400 }
         );
     }

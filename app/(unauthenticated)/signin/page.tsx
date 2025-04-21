@@ -13,7 +13,7 @@ export default async function SignInPage() {
         <div className="flex grow items-center h-full lg:flex-row">
             <div className="lg:w-96 grow flex flex-col lg:shrink-0 lg:grow-0 bg-base-200 basis-1/4 h-full lg:p-16 p-6">
                 <div className="flex justify-between items-center">
-                    <Image src={logoWhite} alt="andysteigerbouw" width={128}/>
+                    <Image src={logoWhite} alt="andysteigerbouw" width={128} priority={false}/>
                     <ThemeSwitcher/>
                 </div>
                 <div className="flex items-center grow">

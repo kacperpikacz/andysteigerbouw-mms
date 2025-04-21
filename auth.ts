@@ -17,6 +17,10 @@ export const { handlers, signIn, signOut, auth } = NextAuth({
 
             return !!auth;
         },
+        redirect: ({baseUrl, url}) => {
+
+            return url;
+        }
     },
     pages: {
         signIn: "/signin",
