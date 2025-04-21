@@ -1,0 +1,43 @@
+{
+  "name": "andysteigerbouw-mms",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev --turbopack",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "@marsidev/react-turnstile": "^1.1.0",
+    "@prisma/client": "^6.6.0",
+    "clsx": "^2.1.1",
+    "daisyui": "^5.0.19",
+    "date-fns": "^4.1.0",
+    "filesize": "^10.1.6",
+    "fs": "^0.0.1-security",
+    "jszip": "^3.10.1",
+    "mime": "^4.0.7",
+    "next": "15.3.0",
+    "next-auth": "^5.0.0-beta.25",
+    "next-themes": "^0.4.6",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "zod-prisma-types": "^3.2.4"
+  },
+  "devDependencies": {
+    "@eslint/eslintrc": "^3",
+    "@iconify/json": "^2.2.327",
+    "@iconify/react": "^5.2.1",
+    "@iconify/tailwind4": "^1.0.6",
+    "@tailwindcss/postcss": "^4",
+    "@types/node": "^20",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "eslint": "^9",
+    "eslint-config-next": "15.3.0",
+    "prisma": "^6.6.0",
+    "tailwindcss": "^4",
+    "typescript": "^5"
+  }
+}

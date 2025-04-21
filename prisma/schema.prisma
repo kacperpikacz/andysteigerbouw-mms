@@ -1,0 +1,55 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
+// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
+
+generator client {
+  provider = "prisma-client-js"
+  output   = "../generated/prisma"
+}
+
+generator zod {
+  provider         = "zod-prisma-types"
+  prismaClientPath = "../generated/prisma"
+}
+
+datasource db {
+  provider = "mongodb"
+  url      = env("DATABASE_URL")
+}
+
+model Inquiry {
+  id String @id @default(auto()) @map("_id") @db.ObjectId
+
+  firstName   String /// @zod.string.min(1).max(32)
+  lastName    String /// @zod.string.min(1).max(32)
+  email       String /// @zod.string.email()
+  phone       String /// @zod.string.min(4).max(32)
+  street      String /// @zod.string.min(1).max(64)
+  postcode    String /// @zod.string.min(1).max(32)
+  city        String /// @zod.string.min(1).max(64)
+  realisation String /// @zod.string.min(1).max(64)
+  description String /// @zod.string.min(1).max(2048)
+  shortId     String?      @unique
+  attachments Attachment[] @relation("InquiryAttachments")
+  isRead      Boolean      @default(false)
+  createdAt   DateTime     @default(now())
+}
+
+model Attachment {
+  id        String   @id @default(auto()) @map("_id") @db.ObjectId
+  fileName  String
+  filePath  String
+  size      Int
+  mimeType  String
+  inquiry   Inquiry  @relation("InquiryAttachments", fields: [inquiryId], references: [id])
+  inquiryId String   @db.ObjectId
+  createdAt DateTime @default(now())
+}
+
+model Counter {
+  id    String @id @default(auto()) @map("_id") @db.ObjectId
+  name  String @unique
+  value String
+}

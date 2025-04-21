@@ -1,0 +1,78 @@
+@import "tailwindcss";
+
+@plugin "daisyui" {
+    themes: light --default, black --prefersdark;
+}
+@plugin "@iconify/tailwind4" {
+    prefixes: lucide;
+}
+
+@custom-variant dark (&:where([data-theme=black], [data-theme=black] *));
+
+:root {
+    --background: #fafafa;
+    --foreground: #171717;
+    --layout-sidebar-width: 256px;
+    --card-p: 1rem;
+    --radius-box: .25rem;
+}
+
+@theme inline {
+    --color-background: var(--background);
+    --color-foreground: var(--foreground);
+    --font-sans: var(--font-geist-sans);
+    --font-mono: var(--font-geist-mono);
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --background: #191919;
+        --foreground: #ededed;
+        background-color: var(--color-base-100);
+    }
+}
+
+.live-image {
+    animation: zoomFloat 10s ease-in-out infinite;
+}
+
+@keyframes zoomFloat {
+    0% {
+        transform: scale(1) translateY(0px);
+    }
+    50% {
+        transform: scale(1.05) translateY(-10px);
+    }
+    100% {
+        transform: scale(1) translateY(0px);
+    }
+}
+
+@utility drawer-side {
+    @apply transition-none;
+
+    > :not(.drawer-overlay) {
+        @apply transition-none;
+    }
+
+    > .drawer-overlay {
+        @apply lg:bg-transparent;
+    }
+}
+
+@utility menu {
+    --menu-active-bg: var(--color-base-300);
+    --menu-active-fg: var(--color-base);
+
+    :where(li:not(.menu-title, .disabled) > :not(ul, details, .menu-title):not(.menu-active, :active, .btn):hover, li:not(.menu-title, .disabled) > details > summary:not(.menu-title):not(.menu-active, :active, .btn):hover) {
+        background-color: var(--color-base-300);
+    }
+}
+
+tr[data-readed="true"] {
+    @apply font-bold opacity-30;
+}
+
+svg.iconify {
+    background-color: inherit;
+}

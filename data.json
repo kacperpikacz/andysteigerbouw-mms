@@ -1,0 +1,112 @@
+[
+  {
+    "firstName": "Emma",
+    "lastName": "Clark",
+    "phone": "+1 202-555-0143",
+    "email": "emma.clark@example.com",
+    "street": "122 Maple Lane",
+    "postcode": "94109",
+    "city": "San Francisco",
+    "realisation": "asSoonAsPossible",
+    "description": "Looking to renovate my kitchen as soon as possible."
+  },
+  {
+    "firstName": "Liam",
+    "lastName": "Turner",
+    "phone": "+1 303-555-0192",
+    "email": "liam.turner@example.com",
+    "street": "789 Pine Street",
+    "postcode": "80203",
+    "city": "Denver",
+    "realisation": "toBeDiscussed",
+    "description": "Planning a home extension, but still considering the scope."
+  },
+  {
+    "firstName": "Olivia",
+    "lastName": "Bennett",
+    "phone": "+44 20 7946 0891",
+    "email": "olivia.bennett@example.co.uk",
+    "street": "33 Rosewood Drive",
+    "postcode": "SW1A 1AA",
+    "city": "London",
+    "realisation": "withinFewMonths",
+    "description": "Would like to redo the bathroom within the next few months."
+  },
+  {
+    "firstName": "Noah",
+    "lastName": "Jensen",
+    "phone": "+1 408-555-0183",
+    "email": "noah.jensen@example.com",
+    "street": "555 Birchwood Rd",
+    "postcode": "95050",
+    "city": "Santa Clara",
+    "realisation": "asSoonAsPossible",
+    "description": "Urgently need help with flooring repairs."
+  },
+  {
+    "firstName": "Ava",
+    "lastName": "Foster",
+    "phone": "+1 312-555-0110",
+    "email": "ava.foster@example.com",
+    "street": "82 Wacker Drive",
+    "postcode": "60606",
+    "city": "Chicago",
+    "realisation": "toBeDiscussed",
+    "description": "Thinking of redoing the backyard, open to ideas."
+  },
+  {
+    "firstName": "Ethan",
+    "lastName": "Nguyen",
+    "phone": "+61 2 5550 7832",
+    "email": "ethan.nguyen@example.au",
+    "street": "91 Beach Street",
+    "postcode": "2000",
+    "city": "Sydney",
+    "realisation": "withinFewMonths",
+    "description": "Renovation planned before the summer holidays."
+  },
+  {
+    "firstName": "Isabella",
+    "lastName": "Schmidt",
+    "phone": "+49 30 12345678",
+    "email": "isabella.schmidt@example.de",
+    "street": "Adlerstraße 10",
+    "postcode": "10115",
+    "city": "Berlin",
+    "realisation": "toBeDiscussed",
+    "description": "Need consultation for a loft conversion project."
+  },
+  {
+    "firstName": "James",
+    "lastName": "Lee",
+    "phone": "+1 415-555-0199",
+    "email": "james.lee@example.com",
+    "street": "221B Mission Blvd",
+    "postcode": "94016",
+    "city": "Daly City",
+    "realisation": "asSoonAsPossible",
+    "description": "Immediate help required for water damage restoration."
+  },
+  {
+    "firstName": "Sophia",
+    "lastName": "Martinez",
+    "phone": "+34 91 123 4567",
+    "email": "sophia.martinez@example.es",
+    "street": "Calle Mayor 25",
+    "postcode": "28013",
+    "city": "Madrid",
+    "realisation": "withinFewMonths",
+    "description": "Considering updating the living room and hall."
+  },
+  {
+    "firstName": "Lucas",
+    "lastName": "Brown",
+    "phone": "+1 718-555-0130",
+    "email": "lucas.brown@example.com",
+    "street": "302 Park Avenue",
+    "postcode": "10010",
+    "city": "New York",
+    "realisation": "toBeDiscussed",
+    "description": "Need advice on energy-efficient window replacement."
+  }
+]
