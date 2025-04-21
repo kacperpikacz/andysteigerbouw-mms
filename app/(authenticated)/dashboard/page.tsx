@@ -71,6 +71,6 @@ export default async function DashboardPage() {
         </div>
         <UnreadInquiries/>
 
-        <InquiryForm/>
+        {/*<InquiryForm/>*/}
     </>;
 }
