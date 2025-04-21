@@ -35,7 +35,7 @@ export function InquiriesTable({inquiries}: { inquiries: Inquiry[] }) {
                     <tbody>
 
                     {(inquiries.length == 0) && <tr>
-                        <td>There are no inquiries to show</td>
+                        <td className="text-base-content/60">No inquiries to show</td>
                     </tr>}
 
                     {paginated.map((inquiry) => {
@@ -63,13 +63,14 @@ export function InquiriesTable({inquiries}: { inquiries: Inquiry[] }) {
                     </tbody>
                 </table>
             </div>
-            <InquiryTablePagination
+            {inquiries.length > 0 && <InquiryTablePagination
                 page={page}
                 pageSize={pageSize}
                 totalItems={totalItems}
                 onPageChange={handlePageChange}
                 onPageSizeChange={handlePageSizeChange}
-            />
+            />}
+
         </div>
 
 
