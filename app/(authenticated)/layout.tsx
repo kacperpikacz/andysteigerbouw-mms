@@ -12,6 +12,6 @@ export default async function AuthenticatedLayout({
 
     return (<>
         <Drawer session={session}>{children}</Drawer>
-        <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
+
     </>);
 }

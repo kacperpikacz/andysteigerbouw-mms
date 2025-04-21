@@ -15,7 +15,7 @@ export default async function DashboardPage() {
     const startOfLastMonth = new Date(now.getFullYear(), now.getMonth() - 1, 1);
     // const endOfLastMonth = new Date(now.getFullYear(), now.getMonth(), 0);
 
-    // eslint-disable-next-line @typescript-eslint/no-unused-vars
+
     const [total, thisMonth, lastMonth] = await Promise.all([
         prisma.inquiry.count(),
         prisma.inquiry.count({

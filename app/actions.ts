@@ -32,9 +32,9 @@ export async function post(formData: FormData) {
         formData.append(key, value);
     }
 
-    var response = await fetch("http://localhost:3000/api/inquiries", {method: "POST", body: formData});
-    var json = await response.json();
-    var l = "a";
+    const response = await fetch("http://localhost:3000/api/inquiries", {method: "POST", body: formData});
+    const json = await response.json();
+    const l = "a";
 }
 
 export async function seedInquiries() {
@@ -45,8 +45,6 @@ export async function seedInquiries() {
         const inquiries: Inquiry[] = JSON.parse(file);
 
         for (const inquiry of inquiries) {
-
-            // @ts-ignore
 
             inquiry.shortId = await getInquiryShortId();
             await prisma.inquiry.create({data: inquiry});
