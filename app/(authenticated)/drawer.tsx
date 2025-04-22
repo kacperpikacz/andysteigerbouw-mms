@@ -62,8 +62,8 @@ export function Drawer({children, session}: { children: ReactNode, session: Sess
 
                     </div>
                     <Link href="/" className="lg:hidden h-full hover:opacity-75 transition-opacity"><Image
-                        priority={false} src={logoWhite} alt="logo" className="w-auto h-full"/></Link>
-                    <div className="flex"><ThemeSwitcher/></div>
+                        priority={true} src={logoWhite} alt="logo" className="w-auto h-full"/></Link>
+                    <div className="flex"><ThemeSwitcher /></div>
                 </nav>
             </div>
             <div className="relative max-w-[100vw] bg-base-100 px-6 py-6">
@@ -103,6 +103,7 @@ export function Drawer({children, session}: { children: ReactNode, session: Sess
                 <div className="navbar border-b h-16 justify-center border-base-300 hidden lg:flex p-2">
                     <Link href="/" className="h-full hover:opacity-75 transition-opacity"> <Image src={logoWhite}
                                                                                                   alt="logo"
+                                                                                                  priority={true}
                                                                                                   className="h-full w-auto"/></Link>
 
                 </div>

@@ -2,16 +2,22 @@
 
 import {useTheme} from "next-themes";
 import {Icon} from "@iconify/react";
+import {useEffect, useState} from "react";
 
 export function ThemeSwitcher() {
-    const {setTheme} = useTheme();
-    
-    return <div className="dropdown dropdown-end">
-        <div tabIndex={0} role="button" className="btn btn-square btn-outline border-base-300"
-             aria-label="Theme toggle">
-            <Icon icon="lucide:sun" className="hidden size-4 group-data-[theme=light]/html:inline"/>
-            <Icon icon="lucide:moon" className="hidden size-4 group-data-[theme=black]/html:inline"/>
-            <Icon icon="lucide:monitor" className="hidden size-4 group-[:not([data-theme])]/html:inline"/>
+        const {setTheme, theme} = useTheme();
+
+    const [mounted, setMounted] = useState(false);
+    useEffect(() => setMounted(true), []);
+    if (!mounted) return null;
+
+        return <div className="dropdown dropdown-end">
+            <div tabIndex={0}  role="button" className="btn btn-square btn-outline border-base-300"
+                 aria-label="Theme toggle">
+                <Icon icon="lucide:sun" className="hidden size-4 group-data-[theme=light]/html:inline"/>
+                <Icon icon="lucide:moon" className="hidden size-4 group-data-[theme=black]/html:inline"/>
+                {theme ===
+                    "system" && <Icon  icon="lucide:monitor" className="size-4 "/>}
         </div>
         <ul tabIndex={0} className="dropdown-content menu bg-base-100 rounded-box z-1 w-36 space-y-0.5 p-1 shadow-sm ">
             <li onClick={() => setTheme("light")}>

@@ -7,7 +7,7 @@
     prefixes: lucide;
 }
 
-@custom-variant dark (&:where([data-theme=black], [data-theme=black] *));
+/*@custom-variant dark (&:where([data-theme=dark], [data-theme=dark] *));*/
 
 :root {
     --background: #fafafa;
