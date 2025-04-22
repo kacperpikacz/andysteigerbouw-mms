@@ -3,6 +3,7 @@
 import {ReactNode, useEffect, useRef, useState} from "react";
 import {Menu} from "@/app/(authenticated)/menu";
 import Link from "next/link";
+import Avatar from "boring-avatars";
 import {usePathname} from "next/navigation";
 import {signOut} from "next-auth/react";
 import {Session} from "next-auth";
@@ -32,6 +33,8 @@ export function Drawer({children, session}: { children: ReactNode, session: Sess
     const handleNavigate = () => {
         if (checkboxRef.current) checkboxRef.current.checked = false;
     };
+
+
 
     return <div className={`drawer ${drawerOpen ? "lg:drawer-open" : ""}`}>
         <input id="layout-sidebar-toggle-trigger" type="checkbox" className="drawer-toggle" ref={checkboxRef}/>
@@ -113,16 +116,13 @@ export function Drawer({children, session}: { children: ReactNode, session: Sess
                         <div className="avatar ">
                             <div className="w-10 dark:bg-black flex items-center justify-center bg-white ">
                                 <div className="flex items-center justify-center h-full">
-                                    <div className="w-4">
-                                        <Image src={getLetter(session?.user?.email)} alt="avatar icon"
-                                               className="dark:invert-100"/>
-                                    </div>
+                                    <Avatar name={session?.user?.email ?? "unknown"} square variant="beam" className="dark:invert-100" colors={["#191919","#fafafa"]} />
 
                                 </div>
 
                             </div>
                         </div>
-                        <div className="grow -space-y-0.5 overflow-ellipsis whitespace-nowrap overflow-hidden" ><p className="text-sm font-medium ">Inge Scholten - De Vriesssssssss</p>
+                        <div className="grow -space-y-0.5 overflow-ellipsis whitespace-nowrap overflow-hidden" ><p className="text-sm font-medium ">{session?.user?.name}</p>
                             <p
                                 className="text-base-content/60 text-xs">@{getFirstName(session?.user?.name)?.toLowerCase()}</p>
                         </div>

@@ -51,8 +51,8 @@ export function InquiriesTable({inquiries}: { inquiries: Inquiry[] }) {
                                    onClick={() => router.push(`/inquiries/${inquiry.id}`)}>
 
                             <th>#{inquiry.shortId}</th>
-                            <td>{fullName}</td>
-                            <td>{inquiry.city}</td>
+                            <td className="capitalize">{fullName}</td>
+                            <td className="capitalize">{inquiry.city}</td>
                             <td>{formattedDate}</td>
                             <td><a role="button" className="btn btn-ghost btn-square"><span
                                 className="iconify lucide--eye text-base-content/80 size-4"></span></a></td>

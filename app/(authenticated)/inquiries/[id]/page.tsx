@@ -31,6 +31,7 @@ export default async function InquiryPage({
     }
 
 
+    const fullName = `${inquiry.firstName} ${inquiry.lastName}`;
     const fullAddress = `${inquiry.street}, ${inquiry.postcode} ${inquiry.city}`;
 
     return <div className="flex gap-6 flex-col">
@@ -51,10 +52,10 @@ export default async function InquiryPage({
                             <div>
                                 <fieldset className="fieldset">
                                     <label className="fieldset-label">Full name</label>
-                                    <input type="text" className="input min-w-sm" defaultValue={inquiry.firstName}
+                                    <input type="text" className="input min-w-sm capitalize" defaultValue={fullName}
                                            disabled={true}/>
                                     <label className="fieldset-label">Address</label>
-                                    <input type="text" className="input min-w-sm" defaultValue={fullAddress}
+                                    <input type="text" className="input min-w-sm capitalize" defaultValue={fullAddress}
                                            disabled={true}/>
 
                                 </fieldset>
