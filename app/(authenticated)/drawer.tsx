@@ -122,7 +122,7 @@ export function Drawer({children, session}: { children: ReactNode, session: Sess
 
                             </div>
                         </div>
-                        <div className="grow -space-y-0.5"><p className="text-sm font-medium">{session?.user?.name}</p>
+                        <div className="grow -space-y-0.5 overflow-ellipsis whitespace-nowrap overflow-hidden" ><p className="text-sm font-medium ">Inge Scholten - De Vriesssssssss</p>
                             <p
                                 className="text-base-content/60 text-xs">@{getFirstName(session?.user?.name)?.toLowerCase()}</p>
                         </div>

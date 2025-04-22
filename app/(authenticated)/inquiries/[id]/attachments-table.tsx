@@ -11,7 +11,7 @@ export function AttachmentsTable({attachments}: { attachments: Attachment[] }) {
 
     return <>
         <div className="overflow-x-auto bg-base-200 rounded-box">
-            <table className="table">
+            <table className="table text-nowrap">
                 <thead>
                 <tr>
                     <th>Name</th>
@@ -74,7 +74,7 @@ export function AttachmentsTable({attachments}: { attachments: Attachment[] }) {
                role="button">
                 <Icon icon="lucide:download" className="size-4"/>
 
-                <span className="hidden sm:inline">Download all</span>
+                <span>Download all</span>
             </a>
         </div>)}
     </>

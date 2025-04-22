@@ -73,5 +73,5 @@ tr[data-readed="true"] {
 }
 
 svg.iconify {
-    background-color: inherit;
+    background-color: transparent;
 }
