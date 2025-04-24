@@ -10,8 +10,8 @@ export default async function ProfilePage() {
     const session = await auth();
 
     return <div className="card card-border rounded-none bg-base-200">
-        <div className="card-body ">
-            <pre>{JSON.stringify(session, null, 2)}</pre>
+        <div className="card-body">
+            <pre className="overflow-auto">{JSON.stringify(session, null, 2)}</pre>
 
         </div>
     </div>;

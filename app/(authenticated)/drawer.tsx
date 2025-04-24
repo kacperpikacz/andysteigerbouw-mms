@@ -116,7 +116,7 @@ export function Drawer({children, session}: { children: ReactNode, session: Sess
                          className="bg-base-300 hover:bg-base-300/50 flex cursor-pointer items-center gap-2.5 px-3 py-2 transition-all">
                         <div className="avatar ">
                             <div className="w-10 dark:bg-black flex items-center justify-center bg-white ">
-                                <div className="flex items-center justify-center h-full">
+                                <div className="flex items-center justify-center h-full w-full">
                                     <Avatar name={session?.user?.email ?? "unknown"} square variant="beam" className="dark:invert-100" colors={["#191919","#fafafa"]} />
 
                                 </div>
