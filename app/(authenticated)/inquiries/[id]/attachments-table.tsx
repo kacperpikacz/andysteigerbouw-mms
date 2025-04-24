@@ -7,7 +7,6 @@ import {AttachmentModal} from "@/app/ui/attachment-modal";
 import {Icon} from "@iconify/react";
 
 export function AttachmentsTable({attachments}: { attachments: Attachment[] }) {
-    const router = useRouter();
 
     return <>
         <div className="overflow-x-auto bg-base-200 rounded-box">

@@ -8,11 +8,12 @@ export function AttachmentModal({attachment}: { attachment: Attachment }) {
             <Image src={`/api/dl/attachments/${attachment.id}`} alt="" width={512} height={512}/>
             <div className="modal-action">
                 <form method="dialog">
-
-
                     <button className="btn">Close</button>
                 </form>
             </div>
         </div>
+        <form method="dialog" className="modal-backdrop">
+            <button>close</button>
+        </form>
     </dialog>
 }
